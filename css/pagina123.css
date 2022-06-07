@@ -1,0 +1,246 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+
+.center{
+    text-align: center;
+}
+
+h1{
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    background-color: rgba(0, 255, 255, 0.397);
+    border-radius: 15px;
+}
+
+img{
+    border-radius: 5px;
+}
+.vh{
+    width: 50vh;
+    text-align: center;
+}
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* estos son los estilos que cambian de color */
+.animated{
+	width: 100%;
+	height: 100vh;
+	color: #fff;
+	background: linear-gradient(45deg,rgb(185, 75, 75),rgb(125, 125, 219),rgb(172, 57, 49),rgb(62, 153, 228));
+	background-size: 400% 400%;
+	position: relative;
+	animation: cambiar 10s ease-in-out infinite;
+}
+
+/* keyframe y responsive */
+
+@keyframes cambiar{
+	0%{background-position: 0 50%;}
+	50%{background-position: 100% 50%;}
+	100%{background-position: 0 50%;}
+}
+
+.panchas{
+    background-color: rgba(255, 255, 255, 0.76);
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+    border-radius: 15px;
+    color: black;
+}
+
+.border{
+    border-radius: 7px;
+}
+
+/*NAVBAR*/
+
+:root {
+    --color-1: #2f3240;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+
+/*header*/
+
+.header {
+    background-color: var(--color-1);
+    padding: 12px 0;
+    line-height: 1.5;
+}
+
+.header .logo,
+.header .nav {
+    padding: 0 15px;
+}
+
+.header .logo a {
+    font-size: 30px;
+    color: #ffffff;
+    text-transform: capitalize;
+}
+
+.header .nav ul li {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.header .nav ul li a {
+    display: block;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    padding: 10px 0;
+    transition: all 0.5s ease;
+}
+
+.header .nav ul li a.active,
+.header .nav ul li a:hover {
+    color: #3c7cf3b4;
+}
+
+.nav-toggler {
+    height: 34px;
+    width: 44px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    display: none;
+    margin-right: 15px;
+}
+
+.nav-toggler:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgba(8, 149, 204, 0.591);
+}
+
+.nav-toggler span {
+    height: 2px;
+    width: 20px;
+    background-color: var(--color-1);
+    display: block;
+    margin: auto;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-toggler.active span {
+    background-color: transparent;
+}
+
+.nav-toggler span::before,
+.nav-toggler span::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-1);
+    transition: all 0.3s ease;
+}
+
+.nav-toggler span::before {
+    transform: translateY(-6px);
+}
+
+.nav-toggler.active span::before {
+    transform: rotate(45deg);
+}
+
+.nav-toggler span::after {
+    transform: translateY(6px);
+}
+
+.nav-toggler.active span::after {
+    transform: rotate(135deg);
+}
+
+/* ESTILOS TABLAS */
+
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #a0ccbc;
+    color: white;
+  }
+
+@media(max-width:991px) {
+    .nav-toggler {
+        display: block;
+    }
+    .header .nav {
+        width: 100%;
+        padding: 0;
+        max-height: 0px;
+        overflow: hidden;
+        visibility: hidden;
+        transition: all 0.5s ease;
+    }
+    .header .nav.open {
+        visibility: visible;
+    }
+    .header .nav ul {
+        padding: 12px 15px 0;
+        margin-top: 12px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .header .nav ul li {
+        display: block;
+        margin: 0;
+    }
+}
